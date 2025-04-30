@@ -1,6 +1,5 @@
 # 2b IMPLEMENTATION OF SLIDING WINDOW PROTOCOL
 ## AIM
-To write a python program for Implementation of sliding Window Protocol.
 ## ALGORITHM:
 1. Start the program.
 2. Get the frame size from the user
@@ -9,7 +8,7 @@ To write a python program for Implementation of sliding Window Protocol.
 5. If your frames reach the server it will send ACK signal to client
 6. Stop the Program
 ## PROGRAM
-## CLIENT
+client:
 ```
 import socket
 s=socket.socket()
@@ -22,36 +21,26 @@ s=int(input("Enter Window Size : "))
 st=0
 i=0
 while True:
-while(i<len(l)):
-st+=s
-c.send(str(l[i:st]).encode())
-ack=c.recv(1024).decode()
-if ack:
-print(ack)
-i+=s
+   while(i<len(l)):
+    st+=s
+    c.send(str(l[i:st]).encode())
+    ack=c.recv(1024).decode()
+    if ack:
+       print(ack)
+       i+=s
 ```
-
-## SERVER
+server:
 ```
-Thus, python program to perform stop and wait protocol was successfully executed
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
-while True:
-print(s.recv(1024).decode())
-s.send("acknowledgement received from the server".encode())
+while True: 
+    print(s.recv(1024).decode())
+    s.send("acknowledgement recived from the server".encode())
 ```
+
 ## OUPUT
-## CLIENT
-
-![SWP2](https://github.com/user-attachments/assets/36296da1-e9f6-465f-9be7-dee9806c403f)
-
-
-
-## SERVER
-
-![SWP3](https://github.com/user-attachments/assets/34a08c83-2282-4b8a-9c46-53e324a0f46b)
-
+![Exp2b](https://github.com/user-attachments/assets/7af4d419-715c-4580-ba84-054dba6d32aa)
 
 
 ## RESULT
